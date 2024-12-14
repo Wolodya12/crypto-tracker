@@ -17,10 +17,11 @@ async function fetchCryptoPrices() {
         console.log("Отримані дані з API:", data); // Діагностика
     } catch (error) {
         console.error("Помилка під час отримання даних з API:", error); // Лог помилки
-        document.getElementById("crypto-prices").innerHTML = <p>Error loading prices.</p>;
-    }
-}
-
+        document.getElementById("crypto-prices").innerHTML = `
+  <p><strong>Bitcoin:</strong> $${data.bitcoin.usd}</p>
+  <p><strong>Ethereum:</strong> $${data.ethereum.usd}</p>
+`;
+        
 // Додати функціонал кнопки "Start Tracking"
 document.getElementById("startButton").addEventListener("click", fetchCryptoPrices);
 
