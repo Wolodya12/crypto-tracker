@@ -1,0 +1,8 @@
+crypto-tracker/
+├── index.html        # Головний HTML файл
+├── styles/           # Папка для CSS
+│   └── style.css     # Файл зі стилями
+├── scripts/          # Папка для JavaScript
+│   └── main.js       # Основний JavaScript файл
+└── assets/           # Папка для зображень або інших ресурсів
+    └── images/       # Підпапка для зображень
