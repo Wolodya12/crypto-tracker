@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Crypto Tracker!</h1>
+    <p>Track your favorite cryptocurrencies easily.</p>
+    <button onclick="startTracking()">Start Tracking</button>
+
+    <script>
+        function startTracking() {
+            alert('Tracking started! This will be linked to the bot soon.');
+        }
+    </script>
+</body>
+</html>
+<div id="crypto-prices">
+    <h2>Crypto Prices</h2>
+    <p>Loading prices...</p>
+</div>
+<script>
+    // Функція для отримання актуальних цін криптовалют
+    async function fetchCryptoPrices() {
+        try {
+            // API-запит до CoinGecko для отримання цін Bitcoin і Ethereum
+            const response = await fetch(
+                "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd"
+            );
+            const data = await response.json();
+
+            // Оновлення HTML контенту з отриманими даними
+            document.getElementById("crypto-prices").innerHTML = `
+                <p><strong>Bitcoin:</strong> $${data.bitcoin.usd}</p>
+                <p><strong>Ethereum:</strong> $${data.ethereum.usd}</p>
+            `;
+        } catch (error) {
+            console.error("Error fetching crypto prices:", error);
+            document.getElementById("crypto-prices").innerHTML = <p>Error loading prices.</p>;
+        }
+    }
+
+    // Викликаємо функцію при завантаженні сторінки
+    window.onload = fetchCryptoPrices;
+</script>
+
