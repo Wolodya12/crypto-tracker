@@ -1,4 +1,3 @@
-crypto-tracker/
 ├── index.html        # Головний HTML файл
 ├── styles/           # Папка для CSS
 │   └── style.css     # Файл зі стилями
