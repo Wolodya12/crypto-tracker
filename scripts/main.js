@@ -16,12 +16,12 @@ async function fetchCryptoPrices() {
         `;
         console.log("Отримані дані з API:", data); // Діагностика
     } catch (error) {
-        console.error("Помилка під час отримання даних з API:", error); // Виведення помилки
+        console.error("Помилка під час отримання даних з API:", error); // Лог помилки
         document.getElementById("crypto-prices").innerHTML = <p>Error loading prices.</p>;
     }
 }
 
-// Обробник для кнопки "Start Tracking"
+// Додати функціонал кнопки "Start Tracking"
 document.getElementById("startButton").addEventListener("click", fetchCryptoPrices);
 
 // Автоматичне завантаження даних при відкритті сторінки
