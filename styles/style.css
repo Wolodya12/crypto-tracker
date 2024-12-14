@@ -53,12 +53,57 @@ footer {
 .nav-btn:hover {
     background-color: #555;
 }
+/* Стилі для фону */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('../assets/1.jpg'); /* Змінено на 1.jpg */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+    min-height: 100vh; /* Висота сторінки покриває весь екран */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрування по вертикалі */
+    align-items: center; /* Центрування по горизонталі */
+    background-image: url('../assets/1.jpg'); /* Посилання на вашу картинку */
+    background-size: cover; /* Масштабування картинки під розмір екрану */
+    background-position: center; /* Центрування картинки */
+    background-repeat: no-repeat; /* Заборона повторення */
+    background-attachment: fixed; /* Фіксація картинки під час прокрутки */
+    font-family: Arial, sans-serif; /* Задайте шрифт для тексту */
+    color: #fff; /* Білий текст */
+}
+
+/* Контейнер для основного інтерфейсу */
+.container {
+    background: rgba(0, 0, 0, 0.8); /* Напівпрозорий чорний фон */
+    border-radius: 10px; /* Округлення країв */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Додає об’єм через тінь */
+    padding: 20px; /* Відступи всередині контейнера */
+    width: 90%; /* Ширина контейнера */
+    max-width: 400px; /* Максимальна ширина */
+    text-align: center; /* Центрування тексту */
+}
+
+/* Стилі для кнопки */
+button {
+    padding: 10px 20px; /* Внутрішні відступи */
+    border: none; /* Забираємо рамку */
+    border-radius: 5px; /* Округлення країв кнопки */
+    background-color: #007bff; /* Синій фон */
+    color: white; /* Білий текст */
+    font-size: 16px; /* Розмір тексту */
+    cursor: pointer; /* Курсор "рука" при наведенні */
+    transition: background-color 0.3s ease; /* Плавна зміна кольору при наведенні */
+}
+
+button:hover {
+    background-color: #0056b3; /* Темно-синій при наведенні */
+}
+
+/* Стилі для заголовків */
+h1, h2 {
+    margin: 10px 0; /* Відступи зверху і знизу */
+}
+
+/* Стилі для абзаців */
+p {
+    margin: 0; /* Забираємо відступи */
 }
