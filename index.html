@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crypto Tracker</title>
-  <link rel="stylesheet" href="styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tracker</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Crypto Tracker</h1>
-      <p>Track your favorite cryptocurrencies easily.</p>
-    </header>
-    <main>
-      <button id="startButton">Start Tracking</button>
-      <section id="crypto-prices">
-        <h2>Crypto Prices</h2>
-        <p>Loading prices...</p>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2024 Crypto Tracker. All rights reserved.</p>
-    </footer>
-  </div>
-  <script src="scripts/main.js"></script>
+    <div class="container">
+        <!-- Верхня частина -->
+        <header>
+            <h1>Crypto Tracker</h1>
+            <p>Track your favorite cryptocurrencies easily</p>
+        </header>
+        
+        <!-- Центральна частина -->
+        <main>
+            <section id="crypto-prices">
+                <h2>Crypto Prices</h2>
+                <p id="prices">Loading prices...</p>
+            </section>
+        </main>
+        
+        <!-- Нижня панель -->
+        <footer>
+            <div class="bottom-nav">
+                <button id="rates" class="nav-btn">Exchange Rates</button>
+                <button id="analysis" class="nav-btn">AI Analysis</button>
+                <button id="more" class="nav-btn">More</button>
+            </div>
+        </footer>
+    </div>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
