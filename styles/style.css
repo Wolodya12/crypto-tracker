@@ -57,7 +57,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('../assets/crypto-background.png');
+    background-image: url('../assets/1.jpg'); /* Змінено на 1.jpg */
     background-size: cover;
     background-position: center;
     color: #fff;
