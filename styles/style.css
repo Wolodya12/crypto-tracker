@@ -53,3 +53,12 @@ footer {
 .nav-btn:hover {
     background-color: #555;
 }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../assets/crypto-background.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
