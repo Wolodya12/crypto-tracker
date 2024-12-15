@@ -1,25 +1,14 @@
-// Функція для отримання курсів криптовалют
-async function fetchCryptoPrices() {
-    try {
-        const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd");
-        const data = await response.json();
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
 
-        document.getElementById("prices").innerHTML = `
-            <p><strong>Bitcoin:</strong> $${data.bitcoin.usd}</p>
-            <p><strong>Ethereum:</strong> $${data.ethereum.usd}</p>
-        `;
-    } catch (error) {
-        console.error("Error fetching prices:", error);
-        document.getElementById("prices").innerHTML = <p>Error loading prices...</p>;
-    }
-}
-
-// Функція для навігації
-document.querySelectorAll(".nav-btn").forEach(button => {
-    button.addEventListener("click", () => {
-        alert(`Clicked on ${button.textContent}`);
+    // Знімаємо активність з усіх секцій
+    document.querySelectorAll(".section").forEach((section) => {
+      section.classList.remove("active");
     });
-});
 
-// Автоматичне завантаження даних
-window.onload = fetchCryptoPrices;
+    // Додаємо активність до вибраної секції
+    const targetId = link.getAttribute("href").substring(1);
+    document.getElementById(targetId).classList.add("active");
+  });
+});
