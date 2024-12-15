@@ -1,109 +1,51 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 100vh;
-    background-color: #121212;
-    color: #fff;
-}
-
-.container {
-    width: 90%;
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
 }
 
 header {
-    padding: 20px 0;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
 
-main {
-    flex: 1;
-    padding: 20px 0;
+header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  color: #ffd700;
+}
+
+.section {
+  display: none;
+  padding: 20px;
+}
+
+.section.active {
+  display: block;
 }
 
 footer {
-    background-color: #222;
-    padding: 10px 0;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-}
-
-.bottom-nav {
-    display: flex;
-    justify-content: space-around;
-}
-
-.nav-btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.nav-btn:hover {
-    background-color: #555;
-}
-/* Стилі для фону */
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* Висота сторінки покриває весь екран */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Центрування по вертикалі */
-    align-items: center; /* Центрування по горизонталі */
-    background-image: url('../assets/1.jpg'); /* Посилання на вашу картинку */
-    background-size: cover; /* Масштабування картинки під розмір екрану */
-    background-position: center; /* Центрування картинки */
-    background-repeat: no-repeat; /* Заборона повторення */
-    background-attachment: fixed; /* Фіксація картинки під час прокрутки */
-    font-family: Arial, sans-serif; /* Задайте шрифт для тексту */
-    color: #fff; /* Білий текст */
-}
-
-/* Контейнер для основного інтерфейсу */
-.container {
-    background: rgba(0, 0, 0, 0.8); /* Напівпрозорий чорний фон */
-    border-radius: 10px; /* Округлення країв */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Додає об’єм через тінь */
-    padding: 20px; /* Відступи всередині контейнера */
-    width: 90%; /* Ширина контейнера */
-    max-width: 400px; /* Максимальна ширина */
-    text-align: center; /* Центрування тексту */
-}
-
-/* Стилі для кнопки */
-button {
-    padding: 10px 20px; /* Внутрішні відступи */
-    border: none; /* Забираємо рамку */
-    border-radius: 5px; /* Округлення країв кнопки */
-    background-color: #007bff; /* Синій фон */
-    color: white; /* Білий текст */
-    font-size: 16px; /* Розмір тексту */
-    cursor: pointer; /* Курсор "рука" при наведенні */
-    transition: background-color 0.3s ease; /* Плавна зміна кольору при наведенні */
-}
-
-button:hover {
-    background-color: #0056b3; /* Темно-синій при наведенні */
-}
-
-/* Стилі для заголовків */
-h1, h2 {
-    margin: 10px 0; /* Відступи зверху і знизу */
-}
-
-/* Стилі для абзаців */
-p {
-    margin: 0; /* Забираємо відступи */
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
 }
