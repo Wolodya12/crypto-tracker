@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Hub</title>
   <link rel="stylesheet" href="styles/style.css">
+  <!-- Підключення Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <!-- Хедер з логотипом -->
@@ -24,12 +26,18 @@
     <section class="key-stats">
       <div class="stat">
         <h3>BTC/USD</h3>
-        <p id="btc-price">Очікуйте...</p>
+        <p id="btc-price">Loading...</p>
       </div>
       <div class="stat">
         <h3>ETH/USD</h3>
-        <p id="eth-price">Очікуйте...</p>
+        <p id="eth-price">Loading...</p>
       </div>
+    </section>
+
+    <!-- Графік -->
+    <section class="chart-section">
+      <h3>Курс криптовалют</h3>
+      <canvas id="crypto-chart" width="400" height="200"></canvas>
     </section>
 
     <!-- Тренди -->
