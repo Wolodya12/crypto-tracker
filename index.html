@@ -9,41 +9,47 @@
 <body>
   <header>
     <h1>Crypto Hub</h1>
-    <p>Платформа для аналітики криптовалют</p>
   </header>
-  <nav>
-    <ul>
-      <li><a href="#home">Головна</a></li>
-      <li><a href="#news">Новини</a></li>
-      <li><a href="#analysis">Аналіз</a></li>
-      <li><a href="#rates">Курси</a></li>
-      <li><a href="#referral">Реферальна система</a></li>
-    </ul>
-  </nav>
+
   <main>
     <section id="home" class="section active">
-      <div class="banner">
-        <h2>Ласкаво просимо до Crypto Hub</h2>
-        <p>Отримуйте актуальні новини та аналітику про криптовалюту</p>
-      </div>
-      <div class="info-panel">
-        <div class="crypto-info">
+      <h2>Ласкаво просимо до Crypto Hub</h2>
+      <div class="crypto-prices">
+        <div>
           <h3>Bitcoin (BTC)</h3>
           <p>Ціна: <span id="btc-price">Завантаження...</span></p>
         </div>
-        <div class="crypto-info">
+        <div>
           <h3>Ethereum (ETH)</h3>
           <p>Ціна: <span id="eth-price">Завантаження...</span></p>
         </div>
       </div>
     </section>
   </main>
+
   <footer>
-    <p>© 2024 Crypto Hub. Усі права захищені.</p>
-  </footer>
-  <script src="scripts/main.js"></script>
-</body>
-</html>
+    <nav class="bottom-nav">
+      <button id="home-btn">
+        <img src="assets/icons/home.png" alt="Головна">
+        <span>Головна</span>
+      </button>
+      <button id="news-btn">
+        <img src="assets/icons/news.png" alt="Новини">
+        <span>Новини</span>
+      </button>
+      <button id="analysis-btn">
+        <img src="assets/icons/analysis.png" alt="Аналіз">
+        <span>Аналіз</span>
+      </button>
+      <button id="rates-btn">
+        <img src="assets/icons/rates.png" alt="Курси">
+        <span>Курси</span>
+      </button>
+      <button id="referral-btn">
+        <img src="assets/icons/referral.png" alt="Реферальна">
+        <span>Реферальна</span>
+      </button>
+    </nav>
   </footer>
 
   <script src="scripts/main.js"></script>
