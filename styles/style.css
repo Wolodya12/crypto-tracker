@@ -186,3 +186,26 @@ section.active {
   width: 100px;
   color: #fff;
 }
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Стилі для логотипа */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.header h1 {
+  font-size: 24px;
+  color: #fff;
+}
