@@ -8,9 +8,17 @@ document.querySelectorAll(".nav-link").forEach((link) => {
       section.classList.remove("active");
     });
 
+    // Знімаємо "active" з усіх кнопок
+    document.querySelectorAll(".nav-link").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
     // Додаємо "active" до вибраної секції
     const targetId = link.getAttribute("href").substring(1);
     document.getElementById(targetId).classList.add("active");
+
+    // Додаємо "active" до натиснутої кнопки
+    link.classList.add("active");
   });
 });
 
