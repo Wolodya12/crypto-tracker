@@ -50,9 +50,13 @@ function loadChart() {
 
 // Функція для завантаження курсів
 function loadRates() {
-  // Реальні дані можна отримати через API (наприклад, CoinGecko)
-  document.getElementById("btc-rate").textContent = "$30,000";
-  document.getElementById("eth-rate").textContent = "$2,000";
+  fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("btc-price").textContent = $${data.bitcoin.usd};
+      document.getElementById("eth-price").textContent = $${data.ethereum.usd};
+    })
+    .catch(error => console.error("Error fetching data:", error));
 }
 
 // Завантаження початкових даних для ключових показників
@@ -67,4 +71,6 @@ function loadInitialStats() {
 }
 
 // Виклик функції для завантаження початкових даних
-loadInitialStats();
+document.addEventListener("DOMContentLoaded", () => {
+  loadInitialStats();
+});
