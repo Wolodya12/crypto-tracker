@@ -43,9 +43,7 @@ async function loadNews() {
   }
 }
 
-// Викликаємо функцію для завантаження новин
-loadNews();
-
+// Функція для оновлення цін криптовалют через Binance API
 async function updateCryptoPrices() {
   const btcPriceElement = document.getElementById('btc-price');
   const ethPriceElement = document.getElementById('eth-price');
@@ -55,13 +53,13 @@ async function updateCryptoPrices() {
   ethPriceElement.innerText = 'Завантаження...';
 
   try {
-    // Отримання ціни для Bitcoin
+    // Отримати ціну Bitcoin
     const btcResponse = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
     if (!btcResponse.ok) throw new Error('Помилка BTC API');
     const btcData = await btcResponse.json();
     btcPriceElement.innerText = $${parseFloat(btcData.price).toFixed(2)};
 
-    // Отримання ціни для Ethereum
+    // Отримати ціну Ethereum
     const ethResponse = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT');
     if (!ethResponse.ok) throw new Error('Помилка ETH API');
     const ethData = await ethResponse.json();
@@ -73,6 +71,6 @@ async function updateCryptoPrices() {
   }
 }
 
-// Виклик функції та оновлення кожну хвилину
+// Оновлювати ціни кожну хвилину
 updateCryptoPrices();
-setInterval(updateCryptoPrices, 60000); // Оновлення кожну хвилину
+setInterval(updateCryptoPrices, 60000);
