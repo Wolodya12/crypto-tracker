@@ -45,17 +45,34 @@ async function loadNews() {
 
 // Викликаємо функцію для завантаження новин
 loadNews();
-async function updateCryptoPrices() {
-  try {
-    const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
-    const data = await response.json();
 
-    document.getElementById('btc-price').innerText = $${data.bitcoin.usd};
-    document.getElementById('eth-price').innerText = $${data.ethereum.usd};
+async function updateCryptoPrices() {
+  const btcPriceElement = document.getElementById('btc-price');
+  const ethPriceElement = document.getElementById('eth-price');
+
+  // Показати статус завантаження
+  btcPriceElement.innerText = 'Завантаження...';
+  ethPriceElement.innerText = 'Завантаження...';
+
+  try {
+    // Отримання ціни для Bitcoin
+    const btcResponse = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
+    if (!btcResponse.ok) throw new Error('Помилка BTC API');
+    const btcData = await btcResponse.json();
+    btcPriceElement.innerText = $${parseFloat(btcData.price).toFixed(2)};
+
+    // Отримання ціни для Ethereum
+    const ethResponse = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT');
+    if (!ethResponse.ok) throw new Error('Помилка ETH API');
+    const ethData = await ethResponse.json();
+    ethPriceElement.innerText = $${parseFloat(ethData.price).toFixed(2)};
   } catch (error) {
-    console.error('Помилка отримання даних', error);
+    console.error('Помилка отримання даних:', error);
+    btcPriceElement.innerText = 'Не вдалося завантажити';
+    ethPriceElement.innerText = 'Не вдалося завантажити';
   }
 }
 
+// Виклик функції та оновлення кожну хвилину
 updateCryptoPrices();
-setInterval(updateCryptoPrices, 60000); // Оновлювати кожну хвилину
+setInterval(updateCryptoPrices, 60000); // Оновлення кожну хвилину
