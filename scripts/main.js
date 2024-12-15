@@ -1,67 +1,17 @@
-// Логіка для перемикання між секціями
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    // Знімаємо "active" з усіх секцій
-    document.querySelectorAll(".section").forEach((section) => {
-      section.classList.remove("active");
-    });
-
-    // Знімаємо "active" з усіх кнопок
-    document.querySelectorAll(".nav-link").forEach((btn) => {
-      btn.classList.remove("active");
-    });
-
-    // Додаємо "active" до вибраної секції
-    const targetId = link.getAttribute("href").substring(1);
-    document.getElementById(targetId).classList.add("active");
-
-    // Додаємо "active" до натиснутої кнопки
-    link.classList.add("active");
-  });
-});
-
-// Функція для завантаження новин
-async function loadNews() {
-  const newsContainer = document.getElementById("news-container");
-  newsContainer.innerHTML = "Завантаження новин...";
-  
-  try {
-    const response = await fetch("https://api.coingecko.com/api/v3/news");
-    const news = await response.json();
-
-    newsContainer.innerHTML = "";
-    news.slice(0, 5).forEach((article) => {
-      const newsCard = document.createElement("div");
-      newsCard.className = "news-card";
-      newsCard.innerHTML = <h3>${article.title}</h3><p>${article.description || "Без опису"}</p>;
-      newsContainer.appendChild(newsCard);
-    });
-  } catch (error) {
-    newsContainer.innerHTML = "Не вдалося завантажити новини.";
-  }
-}
-
-// Функція для оновлення цін криптовалют через Binance API
+// Оновлення цін криптовалют через Binance API
 async function updateCryptoPrices() {
   const btcPriceElement = document.getElementById('btc-price');
   const ethPriceElement = document.getElementById('eth-price');
 
-  // Показати статус завантаження
   btcPriceElement.innerText = 'Завантаження...';
   ethPriceElement.innerText = 'Завантаження...';
 
   try {
-    // Отримати ціну Bitcoin
     const btcResponse = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
-    if (!btcResponse.ok) throw new Error('Помилка BTC API');
     const btcData = await btcResponse.json();
     btcPriceElement.innerText = $${parseFloat(btcData.price).toFixed(2)};
 
-    // Отримати ціну Ethereum
     const ethResponse = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT');
-    if (!ethResponse.ok) throw new Error('Помилка ETH API');
     const ethData = await ethResponse.json();
     ethPriceElement.innerText = $${parseFloat(ethData.price).toFixed(2)};
   } catch (error) {
@@ -71,6 +21,42 @@ async function updateCryptoPrices() {
   }
 }
 
-// Оновлювати ціни кожну хвилину
+// Завантаження новин про криптовалюти
+async function loadCryptoNews() {
+  const newsContainer = document.getElementById('crypto-news');
+  newsContainer.innerHTML = 'Завантаження новин...';
+
+  try {
+    const response = await fetch(
+      'https://api.coingecko.com/api/v3/news'
+    );
+    const newsData = await response.json();
+    newsContainer.innerHTML = '';
+
+    newsData.data.slice(0, 5).forEach((news) => {
+      const newsItem = document.createElement('div');
+      newsItem.classList.add('news-item');
+      newsItem.innerHTML = <h3>${news.title}</h3><p>${news.content}</p>;
+      newsContainer.appendChild(newsItem);
+    });
+  } catch (error) {
+    console.error('Помилка завантаження новин:', error);
+    newsContainer.innerHTML = 'Не вдалося завантажити новини';
+  }
+}
+
+// Перемикання між секціями через кнопки
+const sections = document.querySelectorAll('section');
+const buttons = document.querySelectorAll('.bottom-nav button');
+
+buttons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    sections.forEach((section) => section.classList.remove('active'));
+    sections[index].classList.add('active');
+  });
+});
+
+// Оновлювати ціни та завантажувати новини
 updateCryptoPrices();
 setInterval(updateCryptoPrices, 60000);
+loadCryptoNews();
