@@ -36,27 +36,29 @@
 
   <footer>
     <nav class="bottom-nav">
-      <a href="#home" class="nav-link">Головна</a>
-      <a href="#news" class="nav-link">Новини</a>
-      <a href="#analysis" class="nav-link">Аналіз</a>
-      <a href="#rates" class="nav-link">Курси</a>
-      <a href="#referral" class="nav-link">Реферальна</a>
+      <a href="#home" class="nav-link" id="home-link">
+        <img src="icons/home.svg" alt="Головна">
+        <span>Головна</span>
+      </a>
+      <a href="#news" class="nav-link" id="news-link">
+        <img src="icons/news.svg" alt="Новини">
+        <span>Новини</span>
+      </a>
+      <a href="#analysis" class="nav-link" id="analysis-link">
+        <img src="icons/analysis.svg" alt="Аналіз">
+        <span>Аналіз</span>
+      </a>
+      <a href="#rates" class="nav-link" id="rates-link">
+        <img src="icons/rates.svg" alt="Курси">
+        <span>Курси</span>
+      </a>
+      <a href="#referral" class="nav-link" id="referral-link">
+        <img src="icons/referral.svg" alt="Реферальна">
+        <span>Реферальна</span>
+      </a>
     </nav>
   </footer>
 
   <script src="scripts/main.js"></script>
-  <script>
-    // Telegram WebApp API інтеграція
-    window.Telegram.WebApp.ready();
-
-    // Зміна теми на основі параметрів Telegram
-    document.body.style.backgroundColor = Telegram.WebApp.themeParams.bg_color || "#f5f5f5";
-    document.body.style.color = Telegram.WebApp.themeParams.text_color || "#000";
-
-    Telegram.WebApp.onEvent("themeChanged", () => {
-      document.body.style.backgroundColor = Telegram.WebApp.themeParams.bg_color || "#f5f5f5";
-      document.body.style.color = Telegram.WebApp.themeParams.text_color || "#000";
-    });
-  </script>
 </body>
 </html>
