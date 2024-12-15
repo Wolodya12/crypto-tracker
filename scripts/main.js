@@ -60,3 +60,24 @@ buttons.forEach((button, index) => {
 updateCryptoPrices();
 setInterval(updateCryptoPrices, 60000);
 loadCryptoNews();
+async function fetchPrices() {
+  try {
+    // Отримання даних з Binance API
+    const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbols=["BTCUSDT","ETHUSDT"]');
+    const data = await response.json();
+
+    // Відображення ціни для BTC і ETH
+    const btcPrice = data.find((item) => item.symbol === "BTCUSDT");
+    const ethPrice = data.find((item) => item.symbol === "ETHUSDT");
+
+    document.getElementById('btc-price').innerText = $${parseFloat(btcPrice.price).toFixed(2)};
+    document.getElementById('eth-price').innerText = $${parseFloat(ethPrice.price).toFixed(2)};
+  } catch (error) {
+    console.error("Error fetching prices:", error);
+    document.getElementById('btc-price').innerText = "Error";
+    document.getElementById('eth-price').innerText = "Error";
+  }
+}
+
+// Виклик функції для оновлення цін
+fetchPrices();
