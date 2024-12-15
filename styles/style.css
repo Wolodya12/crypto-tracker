@@ -1,3 +1,4 @@
+/* Загальний стиль */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,68 +11,75 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #333;
-  color: white;
   padding: 10px;
+  color: white;
 }
 
-.header img.logo {
-  width: 60px;
-  height: auto;
-  margin-right: 15px;
-}
-
-.header h1 {
-  font-size: 24px;
-  margin: 0;
+.logo {
+  width: 50px;
+  margin-right: 10px;
 }
 
 .main-content {
-  text-align: center;
   padding: 20px;
-}
-
-.description p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.key-stats {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.stat {
-  background: #2e2e2e;
-  padding: 10px;
-  border-radius: 8px;
   text-align: center;
-  width: 100px;
-  color: #fff;
 }
 
-.quick-access {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.quick-btn {
-  background: #333;
+/* Стиль для секцій */
+.section {
+  display: none;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
   color: white;
-  border: none;
-  padding: 10px 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section.active {
+  display: block;
+}
+
+/* Новини */
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.news-item {
+  background: #282c34;
+  padding: 10px;
   border-radius: 5px;
-  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
 }
 
-.quick-btn:hover {
-  background: #444;
+.news-item:hover {
+  transform: scale(1.05);
+  background: #3a3f47;
 }
 
+/* Аналіз */
+#crypto-chart {
+  margin-top: 20px;
+}
+
+/* Курси */
+.rates-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.rate {
+  text-align: center;
+  background: #282c34;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+/* Нижня навігація */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
@@ -79,8 +87,9 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #282c34;
+  background-color: #1e1e1e;
   padding: 10px 0;
+  border-top: 2px solid #333;
 }
 
 .bottom-nav button {
@@ -88,18 +97,16 @@ body {
   border: none;
   color: white;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.bottom-nav img {
+.bottom-nav button img {
   width: 24px;
   height: 24px;
-  display: block;
-  margin: 0 auto;
-}
-
-.bottom-nav button span {
-  margin-top: 5px;
-  display: block;
+  margin-bottom: 5px;
 }
