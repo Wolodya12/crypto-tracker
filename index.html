@@ -5,42 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Hub</title>
   <link rel="stylesheet" href="styles/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Підключення Chart.js -->
 </head>
 <body>
-  <!-- Хедер з логотипом -->
+  <!-- Логотип і назва -->
   <header class="header">
     <img src="icons/logo.png" alt="Crypto Hub Logo" class="logo">
     <h1>Crypto Hub</h1>
   </header>
 
-  <!-- Основний контент -->
+  <!-- Головний контент -->
   <main class="main-content">
     <!-- Опис -->
     <section class="description">
       <p>Ваша платформа для отримання найактуальнішої аналітики та новин про криптовалюти.</p>
     </section>
 
-    <!-- Ключові показники -->
-    <section class="key-stats">
-      <div class="stat">
-        <h3>BTC/USD</h3>
-        <p id="btc-price">Loading...</p>
-      </div>
-      <div class="stat">
-        <h3>ETH/USD</h3>
-        <p id="eth-price">Loading...</p>
+    <!-- Новини -->
+    <section id="news-section" class="section">
+      <h2>Новини</h2>
+      <div class="news-container">
+        <article class="news-item">
+          <h3>Новина 1</h3>
+          <p>Короткий опис новини...</p>
+        </article>
+        <article class="news-item">
+          <h3>Новина 2</h3>
+          <p>Короткий опис новини...</p>
+        </article>
       </div>
     </section>
 
-    <!-- Швидкий доступ -->
-    <section class="quick-access">
-      <button class="quick-btn">Новини</button>
-      <button class="quick-btn">Аналіз</button>
-      <button class="quick-btn">Курси</button>
+    <!-- Аналіз -->
+    <section id="analysis-section" class="section">
+      <h2>Аналіз</h2>
+      <canvas id="crypto-chart" width="400" height="200"></canvas>
+    </section>
+
+    <!-- Курси -->
+    <section id="rates-section" class="section">
+      <h2>Курси</h2>
+      <div class="rates-container">
+        <div class="rate">
+          <h3>BTC</h3>
+          <p id="btc-rate">Loading...</p>
+        </div>
+        <div class="rate">
+          <h3>ETH</h3>
+          <p id="eth-rate">Loading...</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <!-- Нижнє меню -->
+  <!-- Нижня навігація -->
   <footer>
     <nav class="bottom-nav">
       <button id="home-btn">
