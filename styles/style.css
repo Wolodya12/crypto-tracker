@@ -1,17 +1,20 @@
+/* Загальний фон і шрифт */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background: linear-gradient(180deg, #141e30, #243b55);
+  color: #fff;
 }
 
+/* Шапка */
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #333;
+  background: linear-gradient(45deg, #ff9800, #ff5722);
+  padding: 10px 0;
   color: white;
-  padding: 10px;
 }
 
 .header img.logo {
@@ -25,6 +28,7 @@ body {
   margin: 0;
 }
 
+/* Основний контент */
 .main-content {
   text-align: center;
   padding: 20px;
@@ -32,10 +36,11 @@ body {
 
 .description p {
   font-size: 16px;
-  color: #666;
+  color: #ccc;
   margin-bottom: 20px;
 }
 
+/* Ключові показники */
 .key-stats {
   display: flex;
   justify-content: center;
@@ -44,14 +49,21 @@ body {
 }
 
 .stat {
-  background: #2e2e2e;
+  background: linear-gradient(45deg, #4caf50, #8bc34a);
   padding: 10px;
   border-radius: 8px;
   text-align: center;
   width: 100px;
   color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
 }
 
+.stat:hover {
+  transform: scale(1.1);
+}
+
+/* Кнопки швидкого доступу */
 .quick-access {
   display: flex;
   justify-content: center;
@@ -60,18 +72,22 @@ body {
 }
 
 .quick-btn {
-  background: #333;
+  background: linear-gradient(45deg, #2196f3, #21cbf3);
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
 }
 
 .quick-btn:hover {
-  background: #444;
+  background: linear-gradient(45deg, #21cbf3, #2196f3);
 }
 
+/* Нижня панель навігації */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
@@ -79,8 +95,9 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #282c34;
+  background: linear-gradient(45deg, #1e88e5, #005cb2);
   padding: 10px 0;
+  border-top: 2px solid #333;
 }
 
 .bottom-nav button {
@@ -90,16 +107,25 @@ body {
   text-align: center;
   font-size: 12px;
   cursor: pointer;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.bottom-nav button:hover {
+  color: #ff9800;
 }
 
 .bottom-nav img {
   width: 24px;
   height: 24px;
-  display: block;
-  margin: 0 auto;
+  margin-bottom: 5px;
 }
 
-.bottom-nav button span {
-  margin-top: 5px;
-  display: block;
+/* Графік */
+.chart-section {
+  margin: 20px 0;
+  text-align: center;
 }
